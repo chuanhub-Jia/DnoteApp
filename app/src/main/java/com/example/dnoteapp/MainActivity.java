@@ -2,12 +2,15 @@ package com.example.dnoteapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.TextViewCompat;
 
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -15,12 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
     final String TAG ="chuan";
     FloatingActionButton  btn;
+    TextView hw;
+    ListView lv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        hw = findViewById(R.id.hw);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String edit = data.getStringExtra("gmt");
-        Log.d(TAG,edit);
+        hw.setText(edit);
     }
 
 }
