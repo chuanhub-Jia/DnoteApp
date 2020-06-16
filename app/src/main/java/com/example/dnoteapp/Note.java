@@ -1,17 +1,19 @@
 package com.example.dnoteapp;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 public class Note {
+
     private long id;
     private String content;
     private String time;
     private int tag;
 
-    public Note(){
-
+    public Note() {
     }
-    public Note(String content,String time,int tag){
+    public Note(String content, String time, int tag) {
         this.content = content;
         this.time = time;
         this.tag = tag;
@@ -51,6 +53,8 @@ public class Note {
 
     @Override
     public String toString() {
-        return content + "\n" + time.substring(5,16) + " " + id;
+        return content + "\n" + time.substring(5,16) + " "+ id;
     }
+
+
 }
