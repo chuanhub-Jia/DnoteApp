@@ -23,11 +23,11 @@ public class UserSettingsActivity extends BaseActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         Intent intent = getIntent();
-        /*
+
         if(intent.getExtras() != null) night_change = intent.getBooleanExtra("night_change", false);
         else night_change = false;
 
-         */
+
         initView();
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -35,7 +35,7 @@ public class UserSettingsActivity extends BaseActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if(isNightMode()) myToolbar.setNavigationIcon(getDrawable(R.drawable.ic_settings_white_24));
-        else myToolbar.setNavigationIcon(getDrawable(R.drawable.ic_settings_black_24));
+        else myToolbar.setNavigationIcon(getDrawable(R.drawable.ic__launch_foreground));
     }
 
     public void initView(){
