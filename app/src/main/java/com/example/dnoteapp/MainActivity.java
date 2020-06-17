@@ -24,6 +24,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -36,11 +37,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private NoteDatabase dbHelper;
-
     private Context context = this;
+
     final String TAG = "tag";
     FloatingActionButton btn;
     private ListView lv;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        lv.setOnItemClickListener();
+        lv.setOnItemClickListener(this);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,7 +228,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
 
-        //search setting
         MenuItem mSearch = menu.findItem(R.id.action_search);
         SearchView mSearchView = (SearchView) mSearch.getActionView();
 
@@ -279,7 +279,6 @@ public class MainActivity extends AppCompatActivity {
 
         CRUD op = new CRUD(context);
         op.open();
-        // set adapter
         if (noteList.size() > 0) noteList.clear();
         noteList.addAll(op.getAllNotes());
         op.close();

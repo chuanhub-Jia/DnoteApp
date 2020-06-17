@@ -34,7 +34,6 @@ public class CRUD {
 
     //把note 加入到database里面
     public Note addNote(Note note){
-        //add a note object to database
         ContentValues contentValues = new ContentValues();
         contentValues.put(NoteDatabase.CONTENT, note.getContent());
         contentValues.put(NoteDatabase.TIME, note.getTime());
@@ -80,7 +79,6 @@ public class CRUD {
     }
 
     public void removeNote(Note note) {
-        //remove a note according to ID value
         db.delete(NoteDatabase.TABLE_NAME, NoteDatabase.ID + "=" + note.getId(), null);
     }
 

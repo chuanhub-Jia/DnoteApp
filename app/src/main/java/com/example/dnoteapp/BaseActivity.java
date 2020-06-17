@@ -13,13 +13,4 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
     }
-
-    public boolean isNightMode(){
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        return sharedPreferences.getBoolean("nightMode", false);
-    }
-    public void setNightMode(){
-        setTheme(R.style.DayTheme);
-
-    }
 }

@@ -27,9 +27,9 @@ public class EditActivity extends AppCompatActivity {
     private long id = 0;
     private int openMode = 0;
     private int tag = 1;
-    public Intent intent = new Intent(); // message to be sent
+    public Intent intent = new Intent();
     private boolean tagChange = false;
-    private final String TAG = "tag";
+    private final String TAG = "sBug";
 
 
     @Override

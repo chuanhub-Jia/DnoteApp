@@ -22,6 +22,11 @@
     <color name="i">#E6CEAC</color>
     <color name="o">#ECAD9E</color>
     <color name="p">#F4606C</color>
+    <color name="bcc">#0000FF</color>
+    <color name="bcc1">#AEFFFFFF</color>
+    <color name="bcc3">#0064FF</color>
+    <color name="bcc4">#FAF4DE</color>
+    <color name="bcc5">#E7C96E</color>
 
 
 </resources>
