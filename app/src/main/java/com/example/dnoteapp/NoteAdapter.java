@@ -21,8 +21,8 @@ public class NoteAdapter extends BaseAdapter implements Filterable {
 
     private Context mContext;
 
-    private List<Note> backList;//用来备份原始数据
-    private List<Note> noteList;//这个数据是会改变的，所以要有个变量来备份一下原始数据
+    private List<Note> backList;
+    private List<Note> noteList;
     private MyFilter mFilter;
 
     public NoteAdapter(Context mContext, List<Note> noteList) {

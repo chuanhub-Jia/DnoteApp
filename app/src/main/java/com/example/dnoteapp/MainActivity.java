@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initPrefs();
         btn = (FloatingActionButton) findViewById(R.id.fab);
         lv = findViewById(R.id.lv);
 
@@ -121,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
 
-        //在主界面加载成功之后 显示弹出
         findViewById(R.id.main_layout).post(new Runnable() {
             @Override
             public void run() {
@@ -166,16 +164,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    public void initPrefs(){
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (!sharedPreferences.contains("nightMode")) {
-            editor.putBoolean("nightMode", false);
-            editor.commit();
-        }
-    }
-
-    // 接受startActivityForResult的结果
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 

@@ -40,7 +40,7 @@ public class EditActivity extends AppCompatActivity {
         myToolbar = findViewById(R.id.my_Toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //设置toolbar取代actionbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class EditActivity extends AppCompatActivity {
         Intent getIntent = getIntent();
         openMode = getIntent.getIntExtra("mode", 0);
 
-        if (openMode == 3) {//打开已存在的note
+        if (openMode == 3) {
             id = getIntent.getLongExtra("id", 0);
             old_content = getIntent.getStringExtra("content");
             old_time = getIntent.getStringExtra("time");
@@ -135,9 +135,9 @@ public class EditActivity extends AppCompatActivity {
         }
         else {
             if (et.getText().toString().equals(old_content) && !tagChange)
-                intent.putExtra("mode", -1); // edit nothing
+                intent.putExtra("mode", -1); //无编辑 设置编号-1 模式下不改动
             else {
-                intent.putExtra("mode", 1); //edit the content
+                intent.putExtra("mode", 1); //模式1 启用编辑
                 intent.putExtra("content", et.getText().toString());
                 intent.putExtra("time", dateToStr());
                 intent.putExtra("id", id);
